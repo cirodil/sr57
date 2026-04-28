@@ -26,16 +26,16 @@ const projects = [
     desc: "Орловская обл.",
     image: "/images/portfolio-4.jpg",
   },
-  {
-    title: "Каркасный дом 95 м²",
-    desc: "г. Орёл, ул. Лесная",
-    image: "/images/service-house.jpg",
-  },
-  {
-    title: "Терраса к дому",
-    desc: "п. Августовский, Орловская обл.",
-    image: "/images/service-terrace.jpg",
-  },
+  // {
+  //   title: "Каркасный дом 95 м²",
+  //   desc: "г. Орёл, ул. Лесная",
+  //   image: "/images/service-house.jpg",
+  // },
+  // {
+  //   title: "Терраса к дому",
+  //   desc: "п. Августовский, Орловская обл.",
+  //   image: "/images/service-terrace.jpg",
+  // },
 ];
 
 export default function Portfolio() {
