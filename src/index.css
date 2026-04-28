@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.625rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .section-dark {
+    background-color: #2C1810;
+    color: #FFFFFF;
+  }
+
+  .section-light {
+    background-color: #FFFFFF;
+    color: #2C1810;
+  }
+
+  .section-beige {
+    background-color: #F5F0EB;
+    color: #2C1810;
+  }
+
+  .btn-primary {
+    @apply px-10 py-4 rounded text-sm font-medium uppercase tracking-wider transition-all duration-300;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+  }
+
+  .btn-primary:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    @apply px-10 py-4 rounded text-sm font-medium uppercase tracking-wider transition-all duration-300 border-2;
+    border-color: #2C1810;
+    color: #2C1810;
+    background-color: transparent;
+  }
+
+  .btn-secondary:hover {
+    background-color: #2C1810;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  .text-brown {
+    color: #2C1810;
+  }
+
+  .text-green-accent {
+    color: #4CAF50;
+  }
+
+  .bg-green-accent {
+    background-color: #4CAF50;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
