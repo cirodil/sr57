@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -30,74 +30,79 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", serif;
   }
 }
 
 @layer components {
   .section-dark {
-    background-color: #2C1810;
-    color: #FFFFFF;
+    background-color: #2c1810;
+    color: #ffffff;
   }
 
   .section-light {
-    background-color: #FFFFFF;
-    color: #2C1810;
+    background-color: #ffffff;
+    color: #2c1810;
   }
 
   .section-beige {
-    background-color: #F5F0EB;
-    color: #2C1810;
+    background-color: #f5f0eb;
+    color: #2c1810;
   }
 
   .btn-primary {
     @apply px-10 py-4 rounded text-sm font-medium uppercase tracking-wider transition-all duration-300;
-    background-color: #4CAF50;
-    color: #FFFFFF;
+    background-color: #4caf50;
+    color: #ffffff;
   }
 
   .btn-primary:hover {
-    background-color: #43A047;
+    background-color: #43a047;
     transform: translateY(-2px);
   }
 
   .btn-secondary {
     @apply px-10 py-4 rounded text-sm font-medium uppercase tracking-wider transition-all duration-300 border-2;
-    border-color: #2C1810;
-    color: #2C1810;
+    border-color: #2c1810;
+    color: #2c1810;
     background-color: transparent;
   }
 
   .btn-secondary:hover {
-    background-color: #2C1810;
-    color: #FFFFFF;
+    background-color: #2c1810;
+    color: #ffffff;
     transform: translateY(-2px);
   }
 
   .text-brown {
-    color: #2C1810;
+    color: #2c1810;
   }
 
   .text-green-accent {
-    color: #4CAF50;
+    color: #4caf50;
   }
 
   .bg-green-accent {
-    background-color: #4CAF50;
+    background-color: #4caf50;
   }
 }
 
 @layer utilities {
   .font-playfair {
-    font-family: 'Playfair Display', serif;
+    font-family: "Montserrat", serif;
   }
 
   .font-inter {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 }
