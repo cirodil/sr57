@@ -1,30 +1,30 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ClipboardCheck, Clock, Package, Users } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ClipboardCheck, Clock, Package, Users } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
     icon: ClipboardCheck,
-    title: 'Гарантия 5 лет',
-    desc: 'Письменный договор и официальная гарантия на все виды работ',
+    title: "Гарантия 5 лет",
+    desc: "Письменный договор и официальная гарантия на все виды работ",
   },
   {
     icon: Clock,
-    title: 'Точные сроки',
-    desc: 'Строго соблюдаем согласованные сроки строительства',
+    title: "Точные сроки",
+    desc: "Строго соблюдаем согласованные сроки строительства",
   },
   {
     icon: Package,
-    title: 'Качественные материалы',
-    desc: 'Только проверенные поставщики и сертифицированные материалы',
+    title: "Качественные материалы",
+    desc: "Только проверенные поставщики и сертифицированные материалы",
   },
   {
     icon: Users,
-    title: 'Индивидуальный подход',
-    desc: 'Учитываем все ваши пожелания и особенности участка',
+    title: "Индивидуальный подход",
+    desc: "Учитываем все ваши пожелания и особенности участка",
   },
 ];
 
@@ -33,28 +33,28 @@ export default function WhyUs() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.why-title', {
+      gsap.from(".why-title", {
         y: 40,
         opacity: 0,
         duration: 0.8,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 75%',
-          toggleActions: 'play none none none',
+          start: "top 75%",
+          toggleActions: "play none none none",
         },
       });
 
-      gsap.from('.why-card', {
+      gsap.from(".why-card", {
         y: 50,
         opacity: 0,
         duration: 0.7,
         stagger: 0.15,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: '.why-grid',
-          start: 'top 80%',
-          toggleActions: 'play none none none',
+          trigger: ".why-grid",
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
       });
     }, sectionRef);
@@ -69,20 +69,23 @@ export default function WhyUs() {
           Почему выбирают нас
         </h2>
 
-        <div className="why-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="why-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
           {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
               <div
                 key={i}
-                className="why-card text-center group hover:-translate-y-1.5 transition-transform duration-300"
+                className="why-card h-full flex flex-col items-center p-6 text-center group hover:-translate-y-1.5 transition-transform duration-300"
               >
-                <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-green-accent/10 flex items-center justify-center group-hover:bg-green-accent/20 transition-colors">
+                {/* shrink-0 запрещает иконке сжиматься, если текста много */}
+                <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-green-accent/10 flex items-center justify-center group-hover:bg-green-accent/20 transition-colors shrink-0">
                   <Icon size={32} className="text-green-accent" />
                 </div>
+
                 <h3 className="font-playfair text-lg uppercase font-semibold text-brown mb-3">
                   {feature.title}
                 </h3>
+
                 <p className="text-[#555555] text-sm leading-relaxed">
                   {feature.desc}
                 </p>
