@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /#/admin
+
+Sitemap: https://xn--57-glchqd5adeocin.xn--p1ai/sitemap.xml
