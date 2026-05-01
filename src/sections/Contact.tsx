@@ -17,6 +17,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [agreed, setAgreed] = useState(false); // <-- новое состояние чекбокса
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -50,6 +51,8 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!agreed) return; // <-- дополнительная защита (кнопка и так disabled)
+
     setLoading(true);
     setError("");
 
@@ -70,6 +73,7 @@ export default function Contact() {
       if (response.ok && result === "OK") {
         setSubmitted(true);
         setFormData({ name: "", phone: "", message: "" });
+        setAgreed(false); // сбрасываем чекбокс после успешной отправки
         setTimeout(() => setSubmitted(false), 4000);
       } else {
         setError("Ошибка отправки. Попробуйте позже.");
@@ -157,12 +161,48 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Чекбокс согласия */}
+                <div className="flex items-start gap-3 mt-4">
+                  <input
+                    type="checkbox"
+                    id="consent-checkbox"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    className="mt-1 h-5 w-5 text-green-accent border-gray-300 rounded focus:ring-green-accent accent-green-accent"
+                  />
+                  <label
+                    htmlFor="consent-checkbox"
+                    className="text-sm text-[#555555] leading-snug"
+                  >
+                    Я согласен(а) на обработку моих персональных данных в
+                    соответствии с{" "}
+                    <a
+                      href="/#/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-accent hover:underline"
+                    >
+                      Политикой обработки персональных данных
+                    </a>{" "}
+                    и даю{" "}
+                    <a
+                      href="/#/consent"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-accent hover:underline"
+                    >
+                      Согласие на обработку персональных данных
+                    </a>
+                    .
+                  </label>
+                </div>
+
                 {error && <p className="text-red-500 text-sm">{error}</p>}
 
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-60"
+                  disabled={loading || !agreed}
+                  className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading && <Loader2 size={18} className="animate-spin" />}
                   {loading ? "Отправка..." : "Отправить"}

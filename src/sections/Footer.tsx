@@ -56,6 +56,13 @@ export default function Footer() {
             <Lock size={10} />
             Админ
           </button>
+          <span>•</span>
+          <button
+            onClick={() => navigate("/privacy-policy")}
+            className="flex items-center gap-1 hover:text-white/70 transition-colors"
+          >
+            Политика конфиденциальности
+          </button>
         </div>
       </div>
     </footer>
