@@ -1,5 +1,5 @@
-import { Phone, MapPin, Lock } from 'lucide-react';
-import { useNavigate } from 'react-router';
+import { Phone, MapPin, Lock } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -8,7 +8,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <a href="#" className="text-lg font-bold uppercase tracking-widest font-playfair text-white">
+          <a
+            href="#"
+            className="text-lg font-bold uppercase tracking-widest font-playfair text-white"
+          >
             СТРОЙРЕГИОН57
           </a>
 
@@ -26,6 +29,13 @@ export default function Footer() {
               <Phone size={14} />
               +7 (910) 300-33-98
             </a>
+            <a
+              href="tel:+79208256968"
+              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+            >
+              <Phone size={14} />
+              +7 (920) 825-69-68
+            </a>
           </div>
         </div>
 
@@ -40,7 +50,7 @@ export default function Footer() {
           <span>Орёл и Орловская область</span>
           <span>•</span>
           <button
-            onClick={() => navigate('/admin')}
+            onClick={() => navigate("/admin")}
             className="flex items-center gap-1 hover:text-white/70 transition-colors"
           >
             <Lock size={10} />
