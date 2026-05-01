@@ -184,14 +184,26 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-[#555555] uppercase tracking-wider mb-1">
-                    Телефон
+                    Телефоны
                   </p>
-                  <a
-                    href="tel:+79103003398"
-                    className="text-brown font-medium text-lg hover:text-green-accent transition-colors"
-                  >
-                    +7 (910) 300-33-98
-                  </a>
+                  <ul>
+                    <li>
+                      <a
+                        href="tel:+79103003398"
+                        className="text-brown font-medium text-lg hover:text-green-accent transition-colors"
+                      >
+                        +7 (910) 300-33-98
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="tel:+79208256968"
+                        className="text-brown font-medium text-lg hover:text-green-accent transition-colors"
+                      >
+                        +7 (920) 825-69-68
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
