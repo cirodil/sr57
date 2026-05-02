@@ -25,7 +25,7 @@ const services = [
   },
   {
     title: "Террасы и веранды",
-    desc: "6 000 ₽",
+    desc: "6 000 ₽/м²",
     image: "/images/service-terrace.jpg",
     alt: "Терраса",
   },
