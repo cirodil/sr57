@@ -144,7 +144,7 @@ export default function PrivacyPolicy() {
               письменное заявление по адресу:{" "}
               <strong>302005, г. Орёл, ул. Тамбовская, д. 2</strong> или на
               email:
-              <strong> info@стройрегион57.рф</strong>.
+              <strong> urijpulatov@gmail.com</strong>.
             </p>
             <p>
               Оператор обязуется в течение 10 рабочих дней с момента получения
